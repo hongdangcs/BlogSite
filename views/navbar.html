@@ -1,0 +1,36 @@
+{{define "navbar.html"}}
+
+<nav class="navbar">
+  <div class="navbar-logo">
+    <a class="navbar-logo" href="/">
+      <img class="navbar-logo-image" src="../assets/logo.svg" alt="Blog Site">
+    </a>
+  </div>
+  <div class="navbar-search">
+    <input class="navbar-search-input" type="text" placeholder="Search...">
+    <button type="submit">Search</button>
+  </div>
+  <div class="navbar-auth">
+    <div class="navbar-end">
+      <div class="navbar-item">
+        {{if .user}}
+        <div class="profile-picture">
+          <img src="../assets/profile.svg" alt="Profile">
+          <ul class="dropdown-menu">
+            <li><a href="#">Profile</a></li>
+            <li><a href="#">Settings</a></li>
+            <li><a href="#">Log Out</a></li>
+          </ul>
+        </div>
+        {{else}}
+        <div class="buttons">
+          <a class="button" href="/login">
+            <strong>Log in</strong>
+          </a>
+        </div>
+        {{end}}
+      </div>
+    </div>
+  </div>
+</nav>
+{{end}}
