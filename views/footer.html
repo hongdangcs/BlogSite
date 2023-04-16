@@ -1,0 +1,35 @@
+
+{{define "footer.html"}}
+
+</body>
+<script type="text/javascript">
+  document.addEventListener('DOMContentLoaded', () => {
+
+    const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+
+    if ($navbarBurgers.length > 0) {
+
+      $navbarBurgers.forEach( el => {
+        el.addEventListener('click', () => {
+
+          const target = el.dataset.target;
+          const $target = document.getElementById(target);
+
+          el.classList.toggle('is-active');
+          $target.classList.toggle('is-active');
+
+        });
+      });
+    }
+
+  });
+
+  var profilePicture = document.querySelector('.profile-picture');
+
+  profilePicture.addEventListener('click', function() {
+      var dropdownMenu = this.querySelector('.dropdown-menu');
+      dropdownMenu.classList.toggle('show');
+  });
+</script>
+</html>
+{{end}}
